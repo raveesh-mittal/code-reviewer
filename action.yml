@@ -1,13 +1,29 @@
 name: 'Code reviewer'
-description: 'Greet someone and record the time'
+description: 'Sends slack alert for every PR opened or comment added'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  is-pull-request-opened:
+    description: 'Is Pull request opened'
+    required: false
+    default: false
+  is-comment-added:
+    description: 'Is Comment Added'
+    required: false
+    default: false
+  github-token:
+    description: 'Github Token'
     required: true
-    default: 'World'
+  slack-token:
+    description: 'Slack Token for OAuth'
+    required: true
+  slack-channel:
+    description: 'Slack Channel to send alerts to'
+    required: true
+  data:
+    description: 'Additional data to be passed on to action'
+    required: true
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  success: # id of output
+    description: 'Whether action was successful or not'
 runs:
   using: 'node16'
   main: 'dist/index.js'
