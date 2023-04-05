@@ -26,6 +26,7 @@ async function run() {
         }
       }
     );
+    console.log('slackResponse: ', slackResponse);
     if (response.status === 200) {
       core.setOutput('success', true);
     }
