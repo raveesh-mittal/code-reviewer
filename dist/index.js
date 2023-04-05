@@ -16307,7 +16307,7 @@ async function run() {
 
     // Get the JSON webhook payload for the event that triggered the workflow
     const payload = JSON.stringify(github.context, undefined, 2);
-    const prLink = github.context.payload.pull_request.self.href;
+    const prLink = github.context.payload.pull_request._links.self.href;
 
     const reposPath = prLink.split('.com')[1];
     console.log(`The event payload: ${payload}`);
