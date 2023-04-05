@@ -16308,7 +16308,7 @@ async function run() {
         }
       }
     );
-    console.log('slackResponse: ', slackResponse);
+    console.log('slackResponse: ', response);
     if (response.status === 200) {
       core.setOutput('success', true);
     }
