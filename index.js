@@ -89,7 +89,7 @@ async function sendSlackAlert(message) {
             },
             {
               type: 'mrkdwn',
-              text: `*Created by:*\n<${userUrl}|${user}>`
+              text: `*Created by:*\n${user}`
             }
           ]
         },
